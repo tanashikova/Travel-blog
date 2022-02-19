@@ -5,7 +5,9 @@
     height: 50px;
     display: flex;
     align-items: center;
-    font-family: 'Inter', sans-serif;;
+    font-family: 'Inter', sans-serif;
+    z-index: 999;
+    background-color: cornsilk;
 }
 .topLeft, .topRight{
     flex: 3;
