@@ -1,0 +1,24 @@
+.header{
+    margin-top: 60px;
+}
+
+.headerTitles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Nunito', sans-serif;
+    color:#444;
+   
+}
+.headerTitle{
+    position: absolute;
+    top: 10%;
+    font-size: 70px;
+}
+
+.headerImg{
+    width:100%;
+    height:450px;
+    margin-top: 80px;
+    object-fit: cover;
+}
