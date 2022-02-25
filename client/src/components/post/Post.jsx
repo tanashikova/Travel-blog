@@ -1,20 +1,27 @@
-import "./post.css"
+import "./post.css";
+import {Link} from "react-router-dom";
 
-export default function Post() {
+export default function Post({post}) {
     return (
         <div className="post">
-            <img className="postImg" src="/Images/ShibuyaCrossing.jpg" alt=""/>
+            {post.photo &&(
+            <img className="postImg" 
+            src={post.photo} alt=""/>
+            )}
             <div className="postInfo">
                 <div className="postCats">
-                    <span className="postCat">Country</span>
-                    <span className="postCat">Shopping</span>
+                    {post.categories.map((cat) => (
+                        <span className="postCat">{cat.name}</span>
+                    ))}
                 </div>
-                <span className="postTitle">Tokyo is the city of the future</span>
+                <Link to={`/post/${post._id}`} className="link">
+                    <span className="postTitle">{post.title}</span>
+                </Link>
                 <hr/>
-                <span className="postDate">35 minutes ago</span>
+                <span className="postDate">{new Date(post.createdAt).toDateString()}</span>
             </div>
             <p className="postDescription">
-            Tokyo is a city of surprises — ancient temples are nestled among modern skyscrapers and you're just as likely to see someone wearing a cosplay costume as you are to see someone dressed in a traditional kimono.
+                {post.desc}
             </p>
         </div>
     )
